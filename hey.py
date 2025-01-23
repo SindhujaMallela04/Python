@@ -1,5 +1,6 @@
-num = 255
-ans = num/10 * 10
-print(ans)
+import random
 
-#hello 
+num = random.random()
+print(num)
+dice = random.randrange(1, 7)
+print(dice)
