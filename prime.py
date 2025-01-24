@@ -9,14 +9,17 @@ def is_prime(x):
     return True
 
 def get_input():
-    a = int(input("Enter the lower limit: "))
-    b = int(input("Enter the upper limit: "))
-    return a, b
+    while(1):
+        a = int(input("Enter the lower limit: "))
+        b = int(input("Enter the upper limit: "))
+        if a<0 or b<0:
+            print("Enter only positive numbers!")
+        else:    
+            return a, b
 
 def main():
     a, b = get_input()
     for i in range (a, b+1):
         if(is_prime(i)):
             print(f"{i} is a Prime")
-
 main()
