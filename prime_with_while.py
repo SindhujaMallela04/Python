@@ -11,6 +11,7 @@ def is_prime(x):
         i+=1
     return True    #the number is prime
 
+#Function for getting only positive input
 def get_input():
     while(1):
         a = int(input("Enter the lower limit: "))
@@ -19,7 +20,7 @@ def get_input():
             print("Enter only positive numbers!")
         else:
             return a, b
-
+#main function
 def main():
     a, b = get_input()
     i = a
