@@ -29,3 +29,5 @@ def main():
             print(f"{i} is a prime")
         i+=1    
 main()
+
+

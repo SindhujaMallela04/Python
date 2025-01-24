@@ -23,3 +23,5 @@ def main():
         if(is_prime(i)):
             print(f"{i} is a Prime")
 main()
+
+
