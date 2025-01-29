@@ -14,6 +14,9 @@ class Institution:
 class School(Institution):
     def __init__(self, name):
         self.__name = name
+
+    def Teachers(self):
+        print("There are 15 teachers in this school")
     
     def get_name(self):
         return self.__name
@@ -51,19 +54,10 @@ class PG(College):
     def get_depts(self):
         print("There are 5 depts in the PG course")
 
-school = School("KVP")
-print(school.get_name())
-Ug = College("CMR")
-print(Ug.get_name())
-Ug = UG("Computer Science")
-print(Ug.get_course())
-print(Ug.get_depts())
+list_of_schools = list(map(School, input("Enter the school names separated by spaces: ").split()))
+for school in list_of_schools:
+    print(school.get_name())
 
-Pg = College("CMR")
-print(Pg.get_name())
-Pg = PG("Computer Science")
-print(Pg.get_course())
-print(Pg.get_depts())
 
 
 
