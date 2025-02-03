@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
+import csv
 
 # Step 1: Define Employee interface using Abstract Base Class (ABC)
 class Employee(ABC):
@@ -100,6 +101,22 @@ class Security(Employee):
     def get_salary(self) -> float:
         return self.salary
     
+
+def save_employee_details_to_csv(department: Department, filename: str) -> None:
+    with open(filename, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Name", "Role", "Salary"])
+        for employee in department.employees:
+            writer.writerow([employee.name, employee.work(), employee.get_salary()])
+
+def read_employee_details_from_csv(filename: str) -> None:
+    with open(filename, mode='r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row)
+
+
+
 # Create employees
 manager = Manager("Alice", 80000)
 developer = Developer("Bob", 60000)
@@ -119,6 +136,10 @@ it_department.show_employee_details()
 it_department.promote(intern)
 it_department.promote(developer)
 it_department.promote(securitystaff)
+
+# Save employee details to a CSV file
+save_employee_details_to_csv(it_department, 'employee_details.csv')
+read_employee_details_from_csv('employee_details.csv')
 
 # Total salary in the department
 total_salary = it_department.get_total_salary()

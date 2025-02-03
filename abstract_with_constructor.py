@@ -22,3 +22,4 @@ print(f"The max speed of the car is {car_obj.max_speed()}")
 bike_obj = Bike()
 print(f"The brand of the bike is {bike_obj._Vehicle__brand_name}.")
 print(f"The maximum speed of the bike is {bike_obj.max_speed()}.")
+
